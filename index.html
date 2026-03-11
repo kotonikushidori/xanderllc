@@ -229,6 +229,61 @@
       flex-wrap: wrap;
       position: relative;
     }
+
+    /* ─── RISO ORIGIN BLOCK (under hero) ─── */
+    .riso-origin {
+      position: relative;
+      background: var(--paper);
+      padding: 80px 28px 72px;
+      text-align: center;
+    }
+    .riso-origin-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .riso-origin-rule {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      justify-content: center;
+      margin-bottom: 36px;
+    }
+    .riso-origin-rule::before,
+    .riso-origin-rule::after {
+      content: '';
+      flex: 1;
+      max-width: 80px;
+      height: 1px;
+      background: var(--tan-dark);
+    }
+    .riso-origin-rule span {
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--green-mid);
+      font-weight: 500;
+    }
+    .riso-origin-jp {
+      font-family: var(--serif);
+      font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+      line-height: 1.45;
+      color: var(--ink);
+      margin-bottom: 18px;
+    }
+    .riso-origin-jp em {
+      font-style: italic;
+      color: var(--green-mid);
+    }
+    .riso-origin-body {
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.9;
+      font-weight: 300;
+    }
+    .riso-origin-body strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
     .btn-fill {
       padding: 13px 28px;
       background: var(--green);
@@ -686,6 +741,22 @@
     </div>
   </section>
 
+  <!-- RISO ORIGIN -->
+  <section class="riso-origin">
+    <div class="riso-origin-inner">
+      <div class="riso-origin-rule"><span>Name Origin — Riso</span></div>
+      <p class="riso-origin-jp">
+        大自然の中で<em>稲（Riso）が生きるように</em>——<br>
+        厳しい自然環境でも稲が群として生き残るように、<br>
+        多数の小型IoTを<em>"止まらない前提"</em>でスケールさせる。
+      </p>
+      <p class="riso-origin-body">
+        稲は過酷な環境でも、根を張り、群れとして生き延びる。<br>
+        <strong>Riso</strong> はその生存戦略をIoTに移植したプロダクトです。
+      </p>
+    </div>
+  </section>
+
   <!-- PROBLEM -->
   <section class="problem" id="problem">
     <div class="container">
@@ -777,13 +848,9 @@
           厳しい大自然では、<br>電源も通信も人間も<em>信用しない</em>
         </p>
         <p class="manifesto-body">
-          大自然の中で稲（Riso）が生きるように——<br>
-          厳しい自然環境でも稲が群として生き残るように、<br>
-          多数の小型IoTを"止まらない前提"でスケールさせるためのプロダクトです。
-        </p>
-        <p class="manifesto-body">
           私たちは「省電力」を謳いません。<br>
-          設計の出発点は、<strong style="color:var(--green-lt)">「どんな状況でも生存し続ける」</strong>こと。
+          設計の出発点は、<strong style="color:var(--green-lt)">「どんな状況でも生存し続ける」</strong>こと。<br>
+          それが、「生存するIoT」という言葉に込めた意味です。
         </p>
       </div>
     </div>
