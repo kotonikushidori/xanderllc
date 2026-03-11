@@ -1,108 +1,3 @@
-
-
-<!DOCTYPE html> <html lang="ja"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Xander.llc.</title> <style> @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap'); *, *::before,
-
-pasted
-
-スケルトンがあるが
-Xander合同会社のLPを用意したい。省電力無線通信の技術特化の会社です
-
-## IoTが失敗する理由の7割
-電力消費
-電源断
-通信断
-環境汚染
-## IoTがPoC止まりで終わる理由
-台数を増やした瞬間に、現地電池交換、通信、電源断メンテナンスコストがビジネスを殺す
-## 自分たちの目指すIot
-表で添付
-
-# コピー
-厳しい大自然では、電源も通信も人間も信用しない
-このプロダクトは、その現実から設計
-これはストレージ技術ではなく、“現地に人を行かせない装置”
-「省電力IoT」ではなく 「生存するIoT」
-大自然の中で稲（Riso）が生きるように
-厳しい自然環境でも稲が群として生き残るように、
-多数の小型 IoT を“止まらない前提”でスケールさせるためのプロダクトです。
-Risoの
-ロゴ添付
-
-これらの素材を使って会社のHPワンカラムで作って。
-画像ファイル以外は全てCSSJSもindex.htmlに書いて欲しいというかそんなごりごりアニメーションは不要です
-
-もっと表示
-13:07
-
-Read frontend design skill
-Read frontend design skill
-農業IoT・自然環境向けのプロダクトなので、有機的・自然な雰囲気で、かつ技術的な信頼感を出すデザインで作ります。
-
-
-ファイルを作成しました, ファイルを読み取りました
-ファイルを作成しました, ファイルを読み取りました
-完成しました。構成はこのようになっています。
-
-Hero — Risoロゴ + メインコピー「生存するIoT」
-Why IoT Fails — 4つの失敗要因 + PoC止まりの問題（ダーク背景）
-マニフェスト — グリーン背景の哲学セクション
-技術比較テーブル — 画像の表をそのまま構造化
-設計思想3本柱 — カード形式
-お問い合わせフォーム — 送信モック付き
-全てindex.html 1ファイルにまとめています。ロゴ画像は /mnt/user-data/uploads/ のパスを参照しているので、本番運用時は画像ファイルを同じディレクトリに置いてパスを調整してください。
-
-Index
-コード · HTML 
-ロゴ画像小さいのでCSSでおおきくしたい
-
-13:38
-
-ファイルを編集しました, ファイルを読み取りました
-ファイルを編集しました, ファイルを読み取りました
-width: 160px → 300px に変更しました。さらに大きくしたい場合は数値を調整してください。
-
-Index
-コード · HTML 
-地域の無線とIotが街を豊かにする
-というイメージの画像ってページのどこかで大きくつかえたります？
-xander のロゴと合わせて使った方がいいかな。
-WEBデザイナーの観点で使う使わないの判断も含めて検討してもらえますか
-
-13:44
-両方の画像を確認しました。デザイナー観点で意見を述べます。
-
-citybyxander.png（街のイラスト） → 使うべきです。 線画イラストは「技術的だけど親しみやすい」雰囲気を作れて、このLPに足りない「人・社会へのつながり」を視覚的に補完できます。ヒーロー直下か、マニフェストセクションの背景として大きく使うのが効果的。
-
-xanderlogo.png（XANDERロゴ） → ヘッダーのテキストロゴと差し替えてOKですが、背景が白なので現状のヘッダー背景（クリーム色）では若干浮きます。 フッターか、About的なセクションに使う方が自然。
-
-提案： イラストをマニフェスト〜比較テーブルの間に「ブリッジセクション」として挿入し、Xanderロゴをヘッダーに配置する形で実装します。
-
-
-4個のファイルを表示しました
-4個のファイルを表示しました
-構造を把握しました。マニフェストの直後に街イラストのブリッジセクションを挿入し、ヘッダーロゴも画像に差し替えます。
-
-
-4個のファイルを編集しました, ファイルを読み取りました
-4個のファイルを編集しました, ファイルを読み取りました
-変更内容は以下の通りです。
-
-ヘッダーロゴ　→　xanderlogo.png に差し替え。白背景が浮かないよう mix-blend-mode: multiply を適用してクリーム色のヘッダーに自然に馴染むようにしています。
-
-citybyxander.png　→　マニフェスト（哲学）セクションの直後に配置。「地域の無線とIoTが街と自然をつなぐ」という見出しと短いコピーを添えて、感情訴求（マニフェスト）→ビジュアル共感（街イラスト）→技術比較、という流れを作りました。上部にグラデーションのフェードをかけてセクションとの境界を滑らかにしています。
-
-Index
-コード · HTML 
-
-
-Claudeが応答したときに通知を受け取りますか？
-
-
-
-Claude は AI のため、誤りを含む可能性があります。回答内容は必ずご確認ください。
-Index · HTML
-コピー
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -289,7 +184,7 @@ Index · HTML
       opacity: 0.25;
     }
     .hero-logo-img {
-      width: 300px;
+      width: 480px;
       margin-bottom: 40px;
       position: relative;
     }
@@ -651,7 +546,7 @@ Index · HTML
   <header>
     <div class="header-inner">
       <a href="/" class="logo">
-        <img src="/mnt/user-data/uploads/xanderlogo.png" alt="Xander" class="logo-img">
+        <img src="xanderlogo.png" alt="Xander" class="logo-img">
       </a>
       <nav>
         <a href="#problem">課題</a>
@@ -666,7 +561,7 @@ Index · HTML
   <section class="hero">
     <div class="hero-bg"></div>
     <img
-      src="/mnt/user-data/uploads/1773201972972_image.png"
+      src="riso.png"
       alt="Riso by Xander"
       class="hero-logo-img"
     >
@@ -763,7 +658,7 @@ Index · HTML
       </p>
     </div>
     <div class="city-img-wrap">
-      <img src="/mnt/user-data/uploads/citybyxander.png" alt="地域とIoTのつながりを示すイラスト">
+      <img src="citybyxander.png" alt="地域とIoTのつながりを示すイラスト">
     </div>
   </section>
 
