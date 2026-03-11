@@ -63,7 +63,7 @@
     }
     .logo em { color: var(--green-mid); font-style: normal; }
     .logo-img {
-      height: 68px;
+      height: 36px;
       width: auto;
       display: block;
       /* xanderlogo has white bg — mix-blend-mode darkens it on cream header */
@@ -184,7 +184,7 @@
       opacity: 0.25;
     }
     .hero-logo-img {
-      width: 480px;
+      width: 300px;
       margin-bottom: 40px;
       position: relative;
     }
@@ -281,64 +281,173 @@
     /* ─── PROBLEM ─── */
     .problem { background: var(--ink); color: var(--white); }
     .problem .section-label { color: var(--green-lt); }
-    .problem .section-title { color: var(--white); }
-    .problem .section-body { color: rgba(255,255,255,0.6); max-width: 100%; }
-    .problem-grid {
+
+    /* intro headline + connector */
+    .problem-intro {
+      max-width: 680px;
+      margin-bottom: 56px;
+    }
+    .problem-intro h2 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      line-height: 1.2;
+      color: var(--white);
+      margin-bottom: 14px;
+    }
+    .problem-intro p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.8;
+    }
+    .problem-intro strong { color: rgba(255,255,255,0.85); }
+
+    /* two-column cause + result */
+    .problem-cols {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px 80px;
-      margin-top: 56px;
+      grid-template-columns: 1fr 1px 1fr;
+      gap: 0 48px;
       align-items: start;
     }
-    .problem-left {}
-    .problem-right {}
+    .problem-divider {
+      background: rgba(255,255,255,0.08);
+      align-self: stretch;
+    }
+
+    /* left: 4 causes */
+    .cause-header {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .cause-header h3 {
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      font-weight: 500;
+    }
+    .cause-header .cause-tag {
+      font-family: var(--serif);
+      font-size: 0.85rem;
+      font-style: italic;
+      color: var(--green-lt);
+    }
     .fail-list {
       list-style: none;
-      margin-top: 28px;
     }
     .fail-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 0 16px;
       padding: 18px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      font-size: 0.95rem;
-      color: rgba(255,255,255,0.75);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
     }
-    .fail-list li:first-child { border-top: 1px solid rgba(255,255,255,0.08); }
+    .fail-list li:first-child { border-top: 1px solid rgba(255,255,255,0.07); }
     .fail-num {
       font-family: var(--serif);
-      font-size: 1.4rem;
+      font-size: 1.1rem;
       color: var(--green-lt);
-      line-height: 1;
-      flex-shrink: 0;
-      margin-top: 2px;
+      line-height: 1.4;
+      opacity: 0.7;
     }
     .fail-text strong {
       display: block;
       color: var(--white);
-      font-size: 1rem;
-      margin-bottom: 4px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 3px;
     }
-    .poc-box {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 14px;
-      padding: 36px;
+    .fail-text span {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.6;
     }
-    .poc-box p {
-      font-size: 1.05rem;
-      color: rgba(255,255,255,0.75);
-      line-height: 1.85;
+
+    /* arrow connector between cols */
+    .arrow-bridge {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 48px;
+      gap: 6px;
     }
-    .poc-highlight {
+    .arrow-bridge span {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
+      writing-mode: vertical-rl;
+    }
+
+    /* right: result / conclusion */
+    .result-col {}
+    .result-header {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .result-header h3 {
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      font-weight: 500;
+    }
+    .poc-stage {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 12px;
+      padding: 28px;
+      margin-bottom: 20px;
+    }
+    .poc-stage-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--green-lt);
+      margin-bottom: 12px;
+    }
+    .poc-stage p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.75;
+    }
+    .poc-stage p + p { margin-top: 10px; }
+
+    /* the big conclusion callout */
+    .conclusion-box {
+      background: rgba(82,183,136,0.08);
+      border: 1px solid rgba(82,183,136,0.25);
+      border-radius: 12px;
+      padding: 28px;
+    }
+    .conclusion-box .conclusion-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--green-lt);
+      margin-bottom: 14px;
+    }
+    .conclusion-quote {
       font-family: var(--serif);
-      font-size: 1.4rem;
+      font-size: clamp(1.2rem, 2.2vw, 1.55rem);
       font-style: italic;
       color: var(--white);
-      display: block;
-      margin-top: 18px;
-      line-height: 1.4;
+      line-height: 1.45;
+      margin-bottom: 16px;
+    }
+    .conclusion-box p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.7;
+    }
+    .conclusion-box strong { color: var(--green-lt); }
+
+    @media (max-width: 780px) {
+      .problem-cols { grid-template-columns: 1fr; }
+      .problem-divider { display: none; }
     }
 
     /* ─── COPY SECTION ─── */
@@ -546,12 +655,13 @@
   <header>
     <div class="header-inner">
       <a href="/" class="logo">
-        <img src="xanderlogo.png" alt="Xander" class="logo-img">
+        <img src="/mnt/user-data/uploads/xanderlogo.png" alt="Xander" class="logo-img">
       </a>
       <nav>
         <a href="#problem">課題</a>
         <a href="#manifesto">コンセプト</a>
         <a href="#comparison">技術比較</a>
+        <a href="#contact">お問い合わせ</a>
       </nav>
       <a href="#contact" class="header-cta">お問い合わせ</a>
     </div>
@@ -561,7 +671,7 @@
   <section class="hero">
     <div class="hero-bg"></div>
     <img
-      src="riso.png"
+      src="/mnt/user-data/uploads/1773201972972_image.png"
       alt="Riso by Xander"
       class="hero-logo-img"
     >
@@ -581,46 +691,80 @@
   <section class="problem" id="problem">
     <div class="container">
       <div class="section-label">Why IoT Fails</div>
-      <div class="problem-grid">
-        <div class="problem-left">
-          <h2 class="section-title" style="color:#fff">IoTが失敗する<br>理由の7割</h2>
-          <p class="section-body" style="margin-bottom:0">
-            多くのIoTプロジェクトは、同じ4つの壁に突き当たる。
-          </p>
+
+      <div class="problem-intro">
+        <h2>IoTプロジェクトの7割が失敗する。<br>その理由は、いつも同じだ。</h2>
+        <p>
+          <strong>PoCは成功する。</strong>数台なら、なんとかなる。<br>
+          しかし台数を増やした瞬間、現場で眠っていたコストが一気に牙を剥く。
+        </p>
+      </div>
+
+      <div class="problem-cols">
+
+        <!-- LEFT: 4 causes -->
+        <div>
+          <div class="cause-header">
+            <h3>死因</h3>
+            <span class="cause-tag">現場で起きる4つの壁</span>
+          </div>
           <ul class="fail-list">
             <li>
               <span class="fail-num">01</span>
-              <span class="fail-text"><strong>電力消費</strong>現地バッテリー交換が運用コストを爆発させる</span>
+              <span class="fail-text">
+                <strong>電力消費</strong>
+                <span>現地バッテリー交換が利益を食い潰す</span>
+              </span>
             </li>
             <li>
               <span class="fail-num">02</span>
-              <span class="fail-text"><strong>電源断</strong>瞬間的な停電でシステムがフリーズ、復旧に時間を要する</span>
+              <span class="fail-text">
+                <strong>電源断</strong>
+                <span>停電でフリーズ。復旧のたびに人が動く</span>
+              </span>
             </li>
             <li>
               <span class="fail-num">03</span>
-              <span class="fail-text"><strong>通信断</strong>農地・山間部・海岸では安定通信が保証されない</span>
+              <span class="fail-text">
+                <strong>通信断</strong>
+                <span>農地・山間部・海岸では安定通信が保証されない</span>
+              </span>
             </li>
             <li>
               <span class="fail-num">04</span>
-              <span class="fail-text"><strong>環境汚染</strong>リチウム電池の廃棄が農地を汚染するリスク</span>
+              <span class="fail-text">
+                <strong>環境汚染</strong>
+                <span>サステナビリティの欠如——リチウム廃棄が農地を汚す</span>
+              </span>
             </li>
           </ul>
         </div>
-        <div class="problem-right">
-          <div class="poc-box">
-            <div class="section-label" style="color: var(--green-lt);">PoCで終わる理由</div>
+
+        <!-- DIVIDER -->
+        <div class="problem-divider"></div>
+
+        <!-- RIGHT: result + conclusion -->
+        <div class="result-col">
+          <div class="result-header">
+            <h3>帰結</h3>
+          </div>
+
+          <div class="poc-stage">
+            <div class="poc-stage-label">PoC（点）では見えない、運用（線）の地獄</div>
+            <p>小規模実証では見えなかった問題が、量産・長期運用に移った瞬間に噴出する。</p>
+            <p>現地電池交換・通信断対応・電源復旧——それぞれは小さくても、<br>台数が増えれば<strong style="color:rgba(255,255,255,0.85)">「人を動かすコスト」</strong>が事業採算を破壊する。</p>
+          </div>
+
+          <div class="conclusion-box">
+            <div class="conclusion-label">私たちの答え</div>
+            <p class="conclusion-quote">"これはストレージ技術ではなく、<br>現地に人を行かせない装置だ。"</p>
             <p>
-              小規模実証では見えなかった問題が、台数を増やした瞬間に噴出する。
-            </p>
-            <span class="poc-highlight">
-              "現地電池交換・通信・電源断メンテナンスのコストが、<br>ビジネスを殺す。"
-            </span>
-            <p style="margin-top: 24px; font-size: 0.9rem; color: rgba(255,255,255,0.5);">
-              これはストレージ技術ではなく、<br>
-              <strong style="color: rgba(255,255,255,0.85);">「現地に人を行かせない装置」</strong>の話です。
+              4つの死因すべてを、<strong>ハードウェア設計の段階で潰す。</strong><br>
+              それが、私たちがIoTを再定義する理由です。
             </p>
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -658,7 +802,7 @@
       </p>
     </div>
     <div class="city-img-wrap">
-      <img src="citybyxander.png" alt="地域とIoTのつながりを示すイラスト">
+      <img src="/mnt/user-data/uploads/citybyxander.png" alt="地域とIoTのつながりを示すイラスト">
     </div>
   </section>
 
@@ -814,5 +958,3 @@
   </script>
 </body>
 </html>
-
-
