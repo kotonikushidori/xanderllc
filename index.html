@@ -229,61 +229,6 @@
       flex-wrap: wrap;
       position: relative;
     }
-
-    /* ─── RISO ORIGIN BLOCK (under hero) ─── */
-    .riso-origin {
-      position: relative;
-      background: var(--paper);
-      padding: 80px 28px 72px;
-      text-align: center;
-    }
-    .riso-origin-inner {
-      max-width: 720px;
-      margin: 0 auto;
-    }
-    .riso-origin-rule {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      justify-content: center;
-      margin-bottom: 36px;
-    }
-    .riso-origin-rule::before,
-    .riso-origin-rule::after {
-      content: '';
-      flex: 1;
-      max-width: 80px;
-      height: 1px;
-      background: var(--tan-dark);
-    }
-    .riso-origin-rule span {
-      font-size: 0.68rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--green-mid);
-      font-weight: 500;
-    }
-    .riso-origin-jp {
-      font-family: var(--serif);
-      font-size: clamp(1.5rem, 3.5vw, 2.2rem);
-      line-height: 1.45;
-      color: var(--ink);
-      margin-bottom: 18px;
-    }
-    .riso-origin-jp em {
-      font-style: italic;
-      color: var(--green-mid);
-    }
-    .riso-origin-body {
-      font-size: 1rem;
-      color: var(--muted);
-      line-height: 1.9;
-      font-weight: 300;
-    }
-    .riso-origin-body strong {
-      color: var(--ink);
-      font-weight: 600;
-    }
     .btn-fill {
       padding: 13px 28px;
       background: var(--green);
@@ -676,43 +621,11 @@
     /* ─── FOOTER ─── */
     footer {
       border-top: 1px solid var(--tan-dark);
-      padding: 48px 28px 32px;
+      padding: 32px 28px;
       text-align: center;
+      font-size: 0.78rem;
       color: var(--muted);
     }
-    .footer-inner { max-width: 1100px; margin: 0 auto; }
-    .footer-company {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--ink);
-      margin-bottom: 16px;
-      letter-spacing: 0.04em;
-    }
-    .footer-info {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      flex-wrap: wrap;
-      margin-bottom: 28px;
-    }
-    .footer-info div { display: flex; align-items: baseline; gap: 8px; }
-    .footer-info dt {
-      font-size: 0.72rem;
-      letter-spacing: 0.1em;
-      color: var(--muted);
-      white-space: nowrap;
-    }
-    .footer-info dd { font-size: 0.82rem; color: var(--ink); }
-    .footer-copy {
-      font-size: 0.75rem;
-      color: var(--muted);
-      border-top: 1px solid var(--tan);
-      padding-top: 20px;
-    }
-    @media (max-width: 560px) {
-      .footer-info { flex-direction: column; gap: 10px; align-items: center; }
-    }
-  
 
     /* ─── RESPONSIVE ─── */
     @media (max-width: 780px) {
@@ -734,6 +647,112 @@
       opacity: 1;
       transform: none;
     }
+
+    /* ─── ACHIEVEMENTS ─── */
+    .achievements { background: var(--white); }
+    .achievements-intro { margin-bottom: 52px; }
+
+    /* Award cards row */
+    .award-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-bottom: 56px;
+    }
+    .award-card {
+      background: var(--paper);
+      border: 1px solid var(--tan);
+      border-radius: 12px;
+      padding: 24px 26px;
+    }
+    .award-card-year {
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      color: var(--green-mid);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .award-card-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.5;
+      margin-bottom: 6px;
+    }
+    .award-card-sub {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .award-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 12px;
+      background: rgba(45,106,79,0.08);
+      border: 1px solid rgba(45,106,79,0.18);
+      color: var(--green);
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 100px;
+      letter-spacing: 0.06em;
+    }
+
+    /* Papers section */
+    .papers-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 500;
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--tan);
+    }
+    .paper-group { margin-bottom: 28px; }
+    .paper-group:last-child { margin-bottom: 0; }
+    .paper-venue {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .paper-venue a {
+      font-size: 0.72rem;
+      font-weight: 400;
+      color: var(--green-mid);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(45,106,79,0.3);
+      transition: border-color .15s;
+    }
+    .paper-venue a:hover { border-color: var(--green-mid); }
+    .paper-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .paper-list li {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.65;
+      padding-left: 14px;
+      border-left: 2px solid var(--tan-dark);
+    }
+    .paper-list li strong {
+      display: block;
+      color: var(--ink);
+      font-size: 0.88rem;
+      margin-bottom: 2px;
+    }
+
+    @media (max-width: 600px) {
+      .award-cards { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -748,6 +767,7 @@
         <a href="#problem">課題</a>
         <a href="#manifesto">コンセプト</a>
         <a href="#comparison">技術比較</a>
+        <a href="#achievements">実績</a>
       </nav>
       <a href="#contact" class="header-cta">お問い合わせ</a>
     </div>
@@ -770,22 +790,6 @@
     <div class="hero-actions">
       <a href="#comparison" class="btn-fill">技術詳細を見る</a>
       <a href="#contact" class="btn-outline">お問い合わせ</a>
-    </div>
-  </section>
-
-  <!-- RISO ORIGIN -->
-  <section class="riso-origin">
-    <div class="riso-origin-inner">
-      <div class="riso-origin-rule"><span>Name Origin — Riso</span></div>
-      <p class="riso-origin-jp">
-        大自然の中で<em>稲（Riso）が生きるように</em>——<br>
-        厳しい自然環境でも稲が群として生き残るように、<br>
-        多数の小型IoTを<em>"止まらない前提"</em>でスケールさせる。
-      </p>
-      <p class="riso-origin-body">
-        稲は過酷な環境でも、根を張り、群れとして生き延びる。<br>
-        <strong>Riso</strong> はその生存戦略をIoTに移植したプロダクトです。
-      </p>
     </div>
   </section>
 
@@ -880,9 +884,13 @@
           厳しい大自然では、<br>電源も通信も人間も<em>信用しない</em>
         </p>
         <p class="manifesto-body">
+          大自然の中で稲（Riso）が生きるように——<br>
+          厳しい自然環境でも稲が群として生き残るように、<br>
+          多数の小型IoTを"止まらない前提"でスケールさせるためのプロダクトです。
+        </p>
+        <p class="manifesto-body">
           私たちは「省電力」を謳いません。<br>
-          設計の出発点は、<strong style="color:var(--green-lt)">「どんな状況でも生存し続ける」</strong>こと。<br>
-          それが、「生存するIoT」という言葉に込めた意味です。
+          設計の出発点は、<strong style="color:var(--green-lt)">「どんな状況でも生存し続ける」</strong>こと。
         </p>
       </div>
     </div>
@@ -1009,6 +1017,92 @@
     </div>
   </section>
 
+  <!-- ACHIEVEMENTS -->
+  <section class="achievements" id="achievements">
+    <div class="container">
+      <div class="achievements-intro">
+        <div class="section-label">Achievements</div>
+        <h2 class="section-title">受賞・登壇・<em>研究発表</em></h2>
+        <p class="section-body">
+          ビジネスコンテストでの評価から学術論文の採録まで、技術と事業の両軸で成果を残してきました。
+        </p>
+      </div>
+
+      <!-- Awards & Pitch -->
+      <div class="award-cards fade-up">
+        <div class="award-card">
+          <div class="award-card-year">2018</div>
+          <div class="award-card-title">NoMaps NEDO Dream Pitch<br>with 起業家万博</div>
+          <div class="award-card-sub">NEDO TCP 2018 最終審査会 出場</div>
+          <span class="award-badge">🏆 NEDO TCP賞 受賞</span>
+        </div>
+        <div class="award-card">
+          <div class="award-card-year">2019</div>
+          <div class="award-card-title">クロステック 2019</div>
+          <div class="award-card-sub">最終選考 出場</div>
+          <a href="https://www.ibank.co.jp/xtech2019/28/" target="_blank" rel="noopener" style="display:inline-block;margin-top:12px;font-size:0.75rem;color:var(--green-mid);text-decoration:none;border-bottom:1px solid rgba(45,106,79,0.3);">詳細を見る →</a>
+        </div>
+        <div class="award-card">
+          <div class="award-card-year">2023</div>
+          <div class="award-card-title">北海道経済産業局<br>表彰</div>
+          <div class="award-card-sub">経済産業局長表彰</div>
+          <a href="https://www.hkd.meti.go.jp/hokig/20230519/award.pdf" target="_blank" rel="noopener" style="display:inline-block;margin-top:12px;font-size:0.75rem;color:var(--green-mid);text-decoration:none;border-bottom:1px solid rgba(45,106,79,0.3);">表彰状PDF →</a>
+        </div>
+      </div>
+
+      <!-- Academic Papers -->
+      <div class="papers-label">学術・研究発表</div>
+
+      <div class="paper-group">
+        <div class="paper-venue">
+          情報処理学会 第205回DPS研究発表会
+          <a href="https://www.ipsj.or.jp/kenkyukai/event/dps205.html" target="_blank" rel="noopener">IPSJ DPS205 →</a>
+        </div>
+        <ul class="paper-list">
+          <li>
+            <strong>マイクロサービス向け低フットプリント・低依存性のプロセス間通信ライブラリの実装と評価</strong>
+            杉澤洋祐，杉澤大輔（Xander合同会社）
+          </li>
+        </ul>
+      </div>
+
+      <div class="paper-group">
+        <div class="paper-venue">
+          情報処理学会 第170回OS研究発表会
+          <a href="https://www.ipsj.or.jp/kenkyukai/event/os170.html" target="_blank" rel="noopener">IPSJ OS170 →</a>
+        </div>
+        <ul class="paper-list">
+          <li>
+            <strong>メニーコアCPU上でのDPDKパケットゲートウェイ最適化実装</strong>
+            杉澤洋祐，杉澤大輔（Xander合同会社）
+          </li>
+          <li>
+            <strong>リソース制約下における時間的局所性最適化を備えたハードウェア支援ログ構造型ファイルシステム</strong>
+            杉澤洋祐，杉澤大輔（Xander合同会社）
+          </li>
+          <li>
+            <strong>決定論的セッション制御と論理スライシングによるスケールアップ最適化型Layer7 Proxyアーキテクチャ</strong>
+            杉澤洋祐，杉澤大輔（Xander合同会社）
+          </li>
+        </ul>
+      </div>
+
+      <div class="paper-group">
+        <div class="paper-venue">
+          情報処理学会 第206回DPS・第112回CSEC合同研究発表会
+          <a href="https://www.ipsj.or.jp/kenkyukai/event/dps206csec112.html" target="_blank" rel="noopener">IPSJ DPS206/CSEC112 →</a>
+        </div>
+        <ul class="paper-list">
+          <li>
+            <strong>オブジェクト指向に基づくリアルタイムメディア配信の再定義</strong>
+            杉澤洋祐，杉澤大輔（Xander合同会社）
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section class="contact" id="contact">
     <div class="container">
@@ -1028,28 +1122,10 @@
   </section>
 
   <!-- FOOTER -->
- <!-- FOOTER -->
   <footer>
-    <div class="footer-inner">
-      <p class="footer-company">Xander合同会社</p>
-      <dl class="footer-info">
-        <div>
-          <dt>本店住所</dt>
-          <dd>東京都渋谷区千駄ヶ谷５丁目２番１２号</dd>
-        </div>
-        <div>
-          <dt>設立</dt>
-          <dd>2019年4月18日</dd>
-        </div>
-        <div>
-          <dt>法人番号</dt>
-          <dd>4011003009890</dd>
-        </div>
-      </dl>
-      <p class="footer-copy">&copy; 2026 Xander合同会社. All rights reserved.</p>
-    </div>
+    <p>&copy; 2026 Xander合同会社. All rights reserved.</p>
   </footer>
-  
+
   <script>
     // Fade-up on scroll
     const els = document.querySelectorAll('.fade-up');
