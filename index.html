@@ -676,11 +676,43 @@
     /* ─── FOOTER ─── */
     footer {
       border-top: 1px solid var(--tan-dark);
-      padding: 32px 28px;
+      padding: 48px 28px 32px;
       text-align: center;
-      font-size: 0.78rem;
       color: var(--muted);
     }
+    .footer-inner { max-width: 1100px; margin: 0 auto; }
+    .footer-company {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 16px;
+      letter-spacing: 0.04em;
+    }
+    .footer-info {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+    .footer-info div { display: flex; align-items: baseline; gap: 8px; }
+    .footer-info dt {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .footer-info dd { font-size: 0.82rem; color: var(--ink); }
+    .footer-copy {
+      font-size: 0.75rem;
+      color: var(--muted);
+      border-top: 1px solid var(--tan);
+      padding-top: 20px;
+    }
+    @media (max-width: 560px) {
+      .footer-info { flex-direction: column; gap: 10px; align-items: center; }
+    }
+  
 
     /* ─── RESPONSIVE ─── */
     @media (max-width: 780px) {
@@ -996,10 +1028,28 @@
   </section>
 
   <!-- FOOTER -->
+ <!-- FOOTER -->
   <footer>
-    <p>&copy; 2026 Xander合同会社. All rights reserved.</p>
+    <div class="footer-inner">
+      <p class="footer-company">Xander合同会社</p>
+      <dl class="footer-info">
+        <div>
+          <dt>本店住所</dt>
+          <dd>東京都渋谷区千駄ヶ谷５丁目２番１２号</dd>
+        </div>
+        <div>
+          <dt>設立</dt>
+          <dd>2019年4月18日</dd>
+        </div>
+        <div>
+          <dt>法人番号</dt>
+          <dd>4011003009890</dd>
+        </div>
+      </dl>
+      <p class="footer-copy">&copy; 2026 Xander合同会社. All rights reserved.</p>
+    </div>
   </footer>
-
+  
   <script>
     // Fade-up on scroll
     const els = document.querySelectorAll('.fade-up');
