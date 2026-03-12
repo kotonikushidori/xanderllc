@@ -753,6 +753,53 @@
     @media (max-width: 600px) {
       .award-cards { grid-template-columns: 1fr; }
     }
+
+    /* フォーム全体を包むコンテナ */
+.contact-form-wrapper {
+  position: relative; /* オーバーレイの基準点 */
+  max-width: 600px; /* 必要に応じて調整 */
+  margin: 0 auto;
+}
+
+/* 非活性時のスタイル */
+.contact-form-wrapper.is-disabled .contact-form {
+  opacity: 0.4; /* フォームを薄くする */
+  pointer-events: none; /* クリックや入力を無効化 */
+  filter: blur(2px); /* 軽くぼかすとおしゃれです */
+  user-select: none;
+}
+
+/* メンテナンス中メッセージのオーバーレイ */
+.maintenance-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.maintenance-text {
+  background: rgba(255, 255, 255, 0.9); /* 背景を白く浮かせる */
+  padding: 24px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  color: #333;
+  line-height: 1.6;
+}
+
+.maintenance-text strong {
+  color: #d9534f; /* 警告色を少し混ぜる */
+  display: block;
+  margin-bottom: 8px;
+}
+    
   </style>
 </head>
 <body>
@@ -1099,22 +1146,32 @@
   </section>
 
   <!-- CONTACT -->
-  <section class="contact" id="contact">
-    <div class="container">
-      <div class="section-label">Contact</div>
-      <h2 class="section-title">お問い合わせ</h2>
-      <p class="section-body">
-        導入検討・技術相談・パートナーシップなど、お気軽にご連絡ください。
-      </p>
-      <form class="contact-form" onsubmit="handleSubmit(event)">
-        <input type="text" placeholder="お名前" required>
-        <input type="email" placeholder="メールアドレス" required>
-        <input type="text" placeholder="会社名（任意）">
-        <textarea placeholder="お問い合わせ内容"></textarea>
-        <button type="submit">送信する</button>
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-label">Contact</div>
+    <h2 class="section-title">お問い合わせ</h2>
+    <p class="section-body">
+      導入検討・技術相談・パートナーシップなど、お気軽にご連絡ください。
+    </p>
+
+    <div class="contact-form-wrapper is-disabled">
+      <div class="maintenance-overlay">
+        <p class="maintenance-text">
+          <strong>現在、システムメンテナンス中のためお問い合わせを一時停止しております。</strong><br>
+          お急ぎの場合は、info@example.com まで直接メールにてご連絡ください。
+        </p>
+      </div>
+
+      <form class="contact-form" onsubmit="return false;">
+        <input type="text" placeholder="お名前" disabled>
+        <input type="email" placeholder="メールアドレス" disabled>
+        <input type="text" placeholder="会社名（任意）" disabled>
+        <textarea placeholder="お問い合わせ内容" disabled></textarea>
+        <button type="submit" disabled style="cursor: not-allowed;">送信停止中</button>
       </form>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- FOOTER -->
   <footer>
